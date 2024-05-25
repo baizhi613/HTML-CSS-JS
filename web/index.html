@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>个人博客</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h2>我的博客</h2>
+    <p>欢迎来到我的个人博客</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">首页</a></li>
+      <li><a href="#">关于我</a></li>
+      <li><a href="#">博文</a></li>
+      <li><a href="#">联系</a></li>
+      <li><a href="login.html">登录</a></li>
+      <li><a href="enroll.html">注册</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <article>
+      <h2>博客文章</h2>
+        <div class="slideshow-container">
+          <img class="slides" src="images/image1.jpg" alt="Slide 1">
+          <img class="slides" src="images/image2.jpg" alt="Slide 2">
+          <img class="slides" src="images/image3.jpg" alt="Slide 3">
+        </div>
+        <div class="slideshow-controls">
+          <button onclick="plusSlides(-1)">上一个</button>
+          <button onclick="plusSlides(1)">下一个</button>
+        </div>
+        <div class="article-preview">
+          <h3>文章预览</h3>
+          <div class="preview">
+            <h4>文章标题</h4>
+            <p>这里是文章的一些摘要内容或预览信息...</p>
+            <a href="#">阅读更多</a>
+          </div>
+        </div>
+    </article>
+
+    <script src="script.js"></script>
+
+    <aside>
+      <h3>侧边栏</h3>
+      <h3>联系方式</h3>
+      <ul>
+        <li><a href="mailto:2571358956@qq.com">2571358956@qq.com</a></li>
+        <li>number:15002559323</li>
+      </ul>
+      <h3>热门文章</h3>
+      <ol>
+        <li><a href="article1.html">JAVA从入门到精通</a></li>
+        <li><a href="#">Linux系统编程</a></li>
+        <li><a href="#">STL源码剖析</a></li>
+      </ol>
+      <h3>留言板</h3>
+      <div class="message-board">
+        <div class="message">
+          <p>匿名用户：</p>
+        </div>
+        <div class="message">
+          <p>"很有启发性的文章，谢谢分享！"</p>
+        </div>
+        <div class="message">
+          <p>"我有一个问题，能帮忙解答吗？"</p>
+        </div>
+        <div class="message">
+          <p>管理员回复：</p>
+        </div>
+        <div class="message">
+          <p>"感谢您的支持！如果有任何问题，我们会尽力帮助您。"</p>
+        </div>
+        <div class="message">
+          <p>"很高兴您喜欢我们的内容！如果有任何建议，请告诉我们。</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 我的博客</p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+/*样式表文件 out.css*/
+.int_css{
+	border-width:2px;     /*定义边框宽度*/
+	border-style:dotted;   /*定义边框样式*/
+	text-align:center;    /*定义文本对齐方式*/
+	color:green;            /*定义颜色*/
+}
+#h1_css{
+	font-size:28px;       /*定义字体大小*/
+	font-weight:bold;    /*定义字体粗细*/
+}

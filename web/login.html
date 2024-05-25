@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>登录页面</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+
+    .login-box {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"],
+    .login-box input[type="submit"],
+    .login-box input[type="reset"] {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .login-box input[type="submit"],
+    .login-box input[type="reset"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    .login-box input[type="submit"]:hover,
+    .login-box input[type="reset"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-box">
+    <h2>登录</h2>
+    <form action="submit_page.html" method="post">
+      <div>
+        <label for="username">用户名:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div>
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div>
+        <input type="submit" value="登录">
+        <input type="reset" value="重置">
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
+

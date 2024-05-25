@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>注册页面</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 基础样式 */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+
+    .register-box {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .register-box input[type="text"],
+    .register-box input[type="password"],
+    .register-box input[type="email"],
+    .register-box select,
+    .register-box input[type="submit"],
+    .register-box input[type="reset"] {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .register-box input[type="submit"],
+    .register-box input[type="reset"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    .register-box input[type="submit"]:hover,
+    .register-box input[type="reset"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="register-box">
+    <h2>注册</h2>
+    <form action="submit_register_page.html" method="post">
+      <div>
+        <label for="fullname">用户名:</label>
+        <input type="text" id="fullname" name="fullname" required>
+      </div>
+      <div>
+        <label for="gender">性别:</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">男</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">女</label>
+      </div>
+      <div>
+        <label for="email">邮箱:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="phone">联系方式:</label>
+        <input type="text" id="phone" name="phone" required>
+      </div>
+      <div>
+        <label for="region">地区:</label>
+        <select id="region" name="region">
+          <option value="beijing">北京</option>
+          <option value="shanghai">上海</option>
+          <option value="guangzhou">广州</option>
+          <option value="shenzhen">深圳</option>
+          <option value="other">其他</option>
+        </select>
+      </div>
+      <div>
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div>
+        <input type="submit" value="注册">
+        <input type="reset" value="重置">
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
