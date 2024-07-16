@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--v-show切换css的display-->
+        <div v-show="flag" class="box">我是v-show控制的盒子</div>
+        <div v-if="flag" class="box">我是v-if控制的盒子</div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script>
+        const app=new Vue({
+            el:'#app',
+            data:{
+                flag:true
+            }
+        })
+    </script>
+</body>
+</html>

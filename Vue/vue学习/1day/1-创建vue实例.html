@@ -1,0 +1,19 @@
+<div class="box">
+    {{count}}
+</div>
+<div id="app">
+    <h1>{{msg}}</h1>
+    <a href="#">{{count}}</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            msg:'Hello world!',
+            count:666
+        }
+    })
+</script>

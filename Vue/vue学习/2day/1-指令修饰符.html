@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h3>@keyup.enter->监听键盘回车事件</h3>
+        <input @keyup.enter="fn" v-model="username" type="text">
+        <!-- v-model.trim-去掉首尾空格
+        v-model.number-转数字
+        @事件名.stop-阻止冒泡
+        @事件名.prevent-阻止默认行为 -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script>
+        const app=new Vue({
+            el:'#app',
+            data:{
+                username:''
+            },
+            methods: {
+                fn(){
+                    console.log('键盘回车的时候触发',this.username)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

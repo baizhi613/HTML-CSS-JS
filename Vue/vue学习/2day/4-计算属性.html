@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h3>小黑的玩具清单</h3>
+        <table>
+            <tr>
+                <th>名字</th>
+                <th>数量</th>
+            </tr>
+            <tr v-for="(item,index) in list":key="item.id">
+                <td>{{item.name}}</td>
+                <td>{{item.num}}</td>
+            </tr>
+        </table>
+        <p>礼物总数：{{totalCount}}个</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script>
+        const app=new Vue({
+            el:'#app',
+            data:{
+                list:[
+                    {id:1,name:'篮球',num:1},
+                    {id:2,name:'玩具',num:2},
+                    {id:3,name:'铅笔',num:5},
+                ]
+            },
+            computed:{
+                totalCount(){
+                    let total=this.list.reduce((sum,item)=>sum+item.num,0)
+                    return total
+                } 
+            }
+        })
+    </script>
+</body>
+</html>
