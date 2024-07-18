@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var: 可以重新赋值和重新声明
+        var x = 10;
+        x = 20;
+
+        // let: 可以重新赋值，但不能重新声明
+        let y = 10;
+        y = 20;
+
+        // const: 不能重新赋值或重新声明
+        const z = 10;
+        // z = 20; // 错误
+
+        let num = 42; // Number
+        let str = "Hello, World!"; // String
+        let bool = true; // Boolean
+        let obj = { name: "John", age: 30 }; // Object
+        let arr = [1, 2, 3, 4, 5]; // Array
+        let func = function () { return "Hello"; }; // Function
+
+        // 算术运算符
+        let a = 5 + 2; // 7
+        let b = 5 - 2; // 3
+        let c = 5 * 2; // 10
+        let d = 5 / 2; // 2.5
+        let e = 5 % 2; // 1
+
+        // 赋值运算符
+        let x = 10;
+        x += 5; // 15
+
+        // 比较运算符
+        let isEqual = (5 == '5'); // true
+        let isStrictEqual = (5 === '5'); // false
+
+        // 逻辑运算符
+        let and = (true && false); // false
+        let or = (true || false); // true
+        let not = !true; // false
+
+        // 条件语句
+        let age = 20;
+        if (age >= 18) {
+            console.log("Adult");
+        } else {
+            console.log("Minor");
+        }
+
+        // 三元运算符
+        let canVote = (age >= 18) ? "Yes" : "No";
+
+        // switch语句
+        let fruit = "apple";
+        switch (fruit) {
+            case "banana":
+                console.log("This is a banana.");
+                break;
+            case "apple":
+                console.log("This is an apple.");
+                break;
+            default:
+                console.log("Unknown fruit.");
+        }
+
+        // 循环语句
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+
+        let j = 0;
+        while (j < 5) {
+            console.log(j);
+            j++;
+        }
+
+        let k = 0;
+        do {
+            console.log(k);
+            k++;
+        } while (k < 5);
+
+        // 函数声明
+        function greet(name) {
+            return "Hello, " + name + "!";
+        }
+        console.log(greet("Alice"));
+
+        // 函数表达式
+        const square = function (n) {
+            return n * n;
+        };
+        console.log(square(4));
+
+        // 箭头函数 (ES6)
+        const add = (a, b) => a + b;
+        console.log(add(2, 3));
+
+        let person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 25,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        console.log(person.firstName); // John
+        console.log(person["lastName"]); // Doe
+        console.log(person.fullName()); // John Doe
+
+        let numbers = [1, 2, 3, 4, 5];
+        console.log(numbers[0]); // 1
+
+        // 数组方法
+        numbers.push(6); // 添加元素到末尾
+        numbers.pop(); // 移除末尾元素
+        numbers.shift(); // 移除开头元素
+        numbers.unshift(0); // 添加元素到开头
+
+        // 遍历数组
+        numbers.forEach(function (number) {
+            console.log(number);
+        });
+
+        // 模板字符串
+        let name = "Alice";
+        let greeting = `Hello, ${name}!`;
+        console.log(greeting);
+
+        // 解构赋值
+        let [first, second] = [1, 2];
+        console.log(first); // 1
+        console.log(second); // 2
+
+        let { a1, b1 } = { a1: 10, b1: 20 };
+        console.log(a); // 10
+        console.log(b); // 20
+
+        // 展开运算符
+        let arr1 = [1, 2, 3];
+        let arr2 = [...arr1, 4, 5, 6];
+        console.log(arr2); // [1, 2, 3, 4, 5, 6]
+
+        // 类
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            greet() {
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            }
+        }
+
+        let person1 = new Person("Bob", 30);
+        person1.greet(); // Hello, my name is Bob and I am 30 years old.
+
+        let element = document.getElementById('myElementId');
+
+        let elements = document.getElementsByClassName('myClassName');
+
+        let elements1 = document.getElementsByTagName('div');
+
+        let element1 = document.querySelector('.myClassName'); // 获取第一个匹配的元素
+        let elements2 = document.querySelectorAll('.myClassName'); // 获取所有匹配的元素
+
+        let element2 = document.getElementById('myElementId');
+        element.innerHTML = 'New Content'; // 设置HTML内容
+        element.textContent = 'New Text'; // 设置文本内容
+
+        let element = document.getElementById('myElementId');
+        element.setAttribute('class', 'newClass'); // 设置属性
+        let className = element.getAttribute('class'); // 获取属性
+        element.removeAttribute('class'); // 移除属性
+
+        let element = document.getElementById('myElementId');
+        element.style.color = 'red'; // 修改样式
+        element.style.backgroundColor = 'yellow'; // 修改样式
+
+        let newElement = document.createElement('div');
+        newElement.textContent = 'Hello, New Element!';
+        document.body.appendChild(newElement); // 将新元素添加到body
+
+        let element = document.getElementById('myElementId');
+        element.parentNode.removeChild(element); // 从父节点中删除元素
+
+        let button = document.getElementById('myButton');
+        button.addEventListener('click', function () {
+            alert('Button clicked!');
+        });
+
+        function handleClick() {
+            alert('Button clicked!');
+        }
+
+        let button1 = document.getElementById('myButton');
+        button.addEventListener('click', handleClick);
+
+        // 移除事件监听器
+        button.removeEventListener('click', handleClick);
+
+        let button3 = document.getElementById('myButton');
+        button.addEventListener('click', function (event) {
+            console.log(event.type); // 事件类型
+            console.log(event.target); // 事件的目标元素
+            console.log(event.clientX, event.clientY); // 鼠标点击的坐标
+        });
+
+        let element = document.getElementById('myElementId');
+        element.addEventListener('click', function (event) {
+            console.log('Clicked during capturing!');
+        }, true); // true表示在捕获阶段执行
+
+        element.addEventListener('click', function (event) {
+            console.log('Clicked during bubbling!');
+        }, false); // false表示在冒泡阶段执行
+
+    </script>
+</body>
+
+</html>
