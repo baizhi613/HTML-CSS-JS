@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <div id="app">
+        <!-- 监听子组件的 message 事件 -->
+        <child-component v-on:message="handleMessage"></child-component>
+    </div>
+    <script>
+        Vue.component('child-component', {
+            template: '<button @click="sendMessage">点击我</button>',
+            methods: {
+                sendMessage() {
+                    // 触发自定义事件，并传递消息
+                    this.$emit('message', 'Hello from child!');
+                }
+            }
+        });
+
+        new Vue({
+            el: "#app",
+            methods: {
+                // 定义处理事件的回调函数
+                handleMessage(msg) {
+                    alert(msg); // 弹出消息 'Hello from child!'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

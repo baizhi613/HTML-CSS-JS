@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 </title>
+<script src="https://cdn.staticfile.net/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+	<div>
+	  <input v-model="parentMsg">
+	  <br>
+	  <child v-bind:message="parentMsg"></child>
+	</div>
+</div>
+
+<script>
+// 注册
+Vue.component('child', {
+  props: ['message'],
+  template: '<span>{{ message }}</span>'
+})
+new Vue({
+  el: '#app',
+  data: {
+	parentMsg: '父组件内容'
+  }
+})
+</script>
+</body>
+</html>
