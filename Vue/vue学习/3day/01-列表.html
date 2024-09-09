@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 动态列表示例</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>数据列表</h1>
+        <ul>
+            <li v-for="item in items" :key="item">{{ item }}</li>
+        </ul>
+        <input v-model="newItem" @keyup.enter="addItem" placeholder="输入新项并按回车" />
+    </div>
+
+    <script type="module">
+        import { createApp, ref } from 'vue';
+
+        const App = {
+            setup() {
+                const items = ref(['项 1', '项 2', '项 3']);
+                const newItem = ref('');
+
+                const addItem = () => {
+                    if (newItem.value.trim()) {
+                        items.value.push(newItem.value);
+                        newItem.value = '';
+                    }
+                };
+
+                return {
+                    items,
+                    newItem,
+                    addItem,
+                };
+            },
+            template: `
+        <div>
+          <h1>数据列表</h1>
+          <ul>
+            <li v-for="item in items" :key="item">{{ item }}</li>
+          </ul>
+          <input v-model="newItem" @keyup.enter="addItem" placeholder="输入新项并按回车" />
+        </div>
+      `,
+        };
+
+        createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

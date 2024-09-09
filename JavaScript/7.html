@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="清除定时器" onclick="fun()"/>
+	</body>
+	<script>
+		//var dsq=window.setTimeout("fn()",3000);
+		var dsq=window.setInterval("fn()",3000);
+		function fn(){
+			alert(123);
+		}
+		function fun(){
+			//window.clearTimeout(dsq);
+			window.clearInterval(dsq);
+		}
+	</script>
+</html>

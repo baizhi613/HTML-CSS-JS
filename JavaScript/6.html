@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<iframe name="frame01"></iframe>
+		<iframe name="frame02"></iframe>
+		<iframe name="frame03"></iframe>
+	</body>
+	<script>
+		window.frames['frame01'].document.write('frame01 text.');
+		
+		window.frames.frame02.document.write('frame02 text.');
+		
+		window.frames[2].document.write('frame03 text.');
+	</script>
+	<script>
+		window.parent;
+		window.parent.frames;
+	</script>
+</html>

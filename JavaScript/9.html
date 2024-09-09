@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="点击查看length" onclick="fn()""/>
+		<input type="button" value="点击跳转" onclick="fun()""/>
+		<input type="button" value="点击history.back" onclick="fn1()""/>
+		<input type="button" value="点击history forward" onclick="fn2()""/>
+	</body>
+	<script>
+		function fn(){
+			var n=history.length;
+			alert(n);
+		}
+		function fun(){
+			location.href="http://www.baidu.com";
+		}
+		function fn1(){
+			history.back();
+		}
+		function fn2(){
+			history.forward();
+		}
+	</script>
+</html>
