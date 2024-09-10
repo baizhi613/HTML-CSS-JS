@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			.box {
+				width: 50px;
+				height: 50px;
+				background: #eee;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="box"></div>
+		<script>
+			var box = document.getElementById('box');
+			var i = 0; // 保存用户单击盒子的次数
+			box.onclick = function() { // 处理盒子的单击事件
+				++i;
+				// 单击次数为奇数，变大
+				if(i%2){
+					this.style.width='200px';
+					this.style.height='200px';
+					this.innerHTML='大';
+				// 单击次数为偶数，变小
+				}else{
+					this.style.width='50px';
+					this.style.height='50px';
+					this.innerHTML='小';
+				}
+			};
+		</script>
+	</body>
+</html>

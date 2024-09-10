@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>属性值操作</h2>
+		<input type="text" name="username" value="tom" class="orange" weight='130'/><br/>
+		<input type="button" value="获取" onclick="f1()"/>
+		<input type="button" value="设置" onclick="f2()"/>
+	</body>
+	<script>
+		var nm=document.getElementsByTagName('input')[0];
+		function f1(){
+			console.log(nm.type);
+			console.log(nm.name);
+			console.log(nm.value);
+			console.log(nm.className);
+			nm.getAttribute('weight');
+			console.log(nm.weight);
+			
+		}
+		function f2(){
+			nm.name="usertel";
+			nm.value="123456789";
+			nm.className="banana";
+			nm.type="checkbox";
+			nm.setAttribute('weight',155);
+		}
+	</script>
+</html>
