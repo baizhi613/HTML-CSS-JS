@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>查找重复项最多的字符和个数</title>
+	</head>
+	<body>
+		字符串：<input placeholder="字符串重复度检测" type="text" name="stringCheck" id="isString" onblur="check()" />
+		<script type="text/javascript">
+			function check() {
+				var str = document.getElementById("isString").value; // 使用 .value 获取输入框内容
+				var array = str.split(''); // 把字符串划分为字符数组
+				array.sort(); // 对数组排序
+				var sortedStr = array.join(''); // 将数组转为字符串
+
+				var maxChar = ""; // 存储出现最多的字符
+				var maxCount = 0; // 记录最多重复的次数
+
+				var currentChar = ""; // 当前字符
+				var currentCount = 0; // 当前字符的计数
+
+				for (var i = 0; i < sortedStr.length; i++) {
+					if (sortedStr[i] === currentChar) {
+						currentCount++; // 当前字符计数加1
+					} else {
+						// 如果新的字符出现，比较之前字符的计数
+						if (currentCount > maxCount) {
+							maxChar = currentChar; // 更新最多字符
+							maxCount = currentCount; // 更新最多字符的计数
+						}
+						// 更新为新字符
+						currentChar = sortedStr[i];
+						currentCount = 1; // 重置当前字符计数
+					}
+				}
+
+				// 最后再做一次检查，防止结束时遗漏最后一组字符
+				if (currentCount > maxCount) {
+					maxChar = currentChar;
+					maxCount = currentCount;
+				}
+
+				// 显示最多的字符和重复次数
+				alert('最多的字符：' + maxChar + ' ,重复的次数：' + maxCount);
+			}
+		</script>
+	</body>
+</html>

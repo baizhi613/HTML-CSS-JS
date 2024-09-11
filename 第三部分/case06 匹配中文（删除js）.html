@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>匹配中文字符</title>
+	</head>
+	<body>
+		<!-- 关于上传的时候，只能选择中文名称的图片 -->
+		文件名: <input type="file" id="uploadFile" onchange="validateFileName()" />
+
+		<script type="text/javascript">
+			function validateFileName() {
+				var fileInput = document.getElementById('uploadFile'); // 获取文件上传控件
+				var filePath = fileInput.value; // 获取上传的文件路径
+				var fileName = filePath.split('\\').pop(); // 提取文件名（排除路径）
+				
+				// 这里的正则表达式匹配非中文字符
+				var nonChineseRegex = /[^\u4e00-\u9fa5]/g;
+
+				// 替换非中文字符为'w'
+				var newFileName = fileName.replace(nonChineseRegex, 'w');
+				
+				alert("原始文件名: " + fileName + "\n替换后的文件名: " + newFileName);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>限定输入内容</title>
+		<style>
+			input[type=text] {
+				width: 40px;
+				border-color: #bbb;
+				height: 25px;
+				font-size: 14px;
+				border-radius: 2px;
+				outline: 0;
+				border: #ccc 1px solid;
+				padding: 0 10px;
+				-webkit-transition: box-shadow .5s;
+				margin-bottom: 15px;
+			}
+
+			input[type=text]:hover,
+			input[type=text]:focus,
+			input[type=submit]:hover {
+				border: 1px solid #56b4ef;
+				box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 0 8px rgba(82, 168, 236, .6);
+				-webkit-transition: box-shadow .5s;
+			}
+
+			input::-webkit-input-placeholder {
+				color: #999;
+				-webkit-transition: color .5s;
+			}
+
+			input:focus::-webkit-input-placeholder,
+			input:hover::-webkit-input-placeholder {
+				color: #c2c2c2;
+				-webkit-transition: color .5s;
+			}
+
+			input[type=submit] {
+				height: 30px;
+				width: 80px;
+				background: #4393C9;
+				border: 1px solid #fff;
+				color: #fff;
+				font: 14px bolder;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="form">
+			年份 <input type="text" name="year">
+			月份 <input type="text" name="month">
+			<input type="submit" value="查询">
+		</form>
+		<div id="result"></div>
+		<script>
+			function checkYear(obj) {
+				if(!obj.value.match(/^\d{4}$/)){
+					obj.style.borderColor='red';
+					result.innerHTML='输入错误，年份为4位数字表示';
+					return false;
+				}
+				result.innerHTML='';
+				return true;
+				//检查年
+			}
+
+			function checkMonth(obj) {
+				//检查月
+				if(!obj.value.match(/^((0?[1-9])|(1[012]))$/)){
+					obj.style.borderColor='red';
+					result.innerHTML='输入错误，月份为1-12之间';
+					return false;
+				}
+				result.innerHTML='';
+				return true;
+			}
+			var form = document.getElementById('form'); // <form>元素对象
+			var result = document.getElementById('result'); // <div>元素对象
+			var inputs = document.getElementsByTagName('input'); // <input>元素集合
+			form.onsubmit = function() {
+				return checkYear(inputs.year) && checkMonth(inputs.month);
+			};
+			inputs.year.onfocus = function() {
+				this.style.borderColor = '';
+			};
+			inputs.month.onfocus = function() {
+				this.style.borderColor = '';
+			};
+			if (!String.prototype.trim) {
+				String.prototype.trim = function() {
+					return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+				};
+			}
+			inputs.year.onblur = function() {
+				this.value = this.value.trim();
+				checkYear(this);
+			};
+			inputs.month.onblur = function() {
+				this.value = this.value.trim();
+				checkMonth(this);
+			};
+		</script>
+	</body>
+</html>

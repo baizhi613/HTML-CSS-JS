@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>身份证号码验证</title>
+	</head>
+	<body>
+		身份证号码：<input placeholder="请输入身份证号码" type="text" name="identityCard" id="idCard" onblur="idCard()" />
+		<div id="idCardResult"></div> <!-- 显示验证结果 -->
+		<script type="text/javascript">
+			// 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X。 
+			function idCard() {
+				var idCardInput = document.getElementById("idCard").value.trim();
+				var result = document.getElementById("idCardResult");
+
+				// 正则表达式：15位数字或18位（前17位为数字，最后一位可以是数字或X/x）
+				var idCardReg = /^(^[1-9]\d{7}(0\d|1[0-2])([0-2]\d|3[01])\d{3}$)|(^[1-9]\d{5}(18|19|20)\d{2}(0\d|1[0-2])([0-2]\d|3[01])\d{3}(\d|X|x)$)$/;
+
+				if (idCardReg.test(idCardInput)) {
+					result.innerHTML = "身份证号码格式正确";
+					result.style.color = "green";
+				} else {
+					result.innerHTML = "身份证号码格式不正确，请重新输入";
+					result.style.color = "red";
+				}
+			}
+		</script>
+	</body>
+</html>
