@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>答题比对</title>
+</head>
+<body>
+
+<div id="question"></div>
+<div id="correctAnswer"></div>
+<div id="userAnswer"></div>
+<button onclick="nextQuestion()">下一题</button>
+
+<script>
+// 标准答案和用户答案数组
+const correctAnswers = ['A', 'D', 'C', 'B', 'A', 'C', 'C', 'C'];
+const userAnswers = ['A', 'B', 'C', 'B', 'A', 'C', 'C', 'C'];
+let currentQuestionIndex = 0;
+
+// 显示第一题的答案
+displayQuestion();
+
+function displayQuestion() {
+  const questionDiv = document.getElementById('question');
+  const correctAnswerDiv = document.getElementById('correctAnswer');
+  const userAnswerDiv = document.getElementById('userAnswer');
+  
+  // 显示当前题目索引（从1开始）
+  questionDiv.textContent = `第 ${currentQuestionIndex + 1} 题：`;
+  
+  // 显示标准答案和用户答案
+  correctAnswerDiv.textContent = `标准答案：${correctAnswers[currentQuestionIndex]}`;
+  userAnswerDiv.textContent = `用户答案：${userAnswers[currentQuestionIndex]}`;
+  
+  // 比对答案并显示结果
+  if (correctAnswers[currentQuestionIndex] === userAnswers[currentQuestionIndex]) {
+    userAnswerDiv.style.color = 'green';
+  } else {
+    userAnswerDiv.style.color = 'red';
+  }
+}
+
+function nextQuestion() {
+  // 移动到下一个题目
+  currentQuestionIndex++;
+  
+  // 如果已经是最后一题，则重置到第一题
+  if (currentQuestionIndex >= correctAnswers.length) {
+    currentQuestionIndex = 0;
+  }
+  
+  // 更新页面显示
+  displayQuestion();
+}
+</script>
+
+</body>
+</html>
