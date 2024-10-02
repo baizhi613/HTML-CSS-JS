@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .transition-button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition: background-color 0.5s, width 0.5s; /* 过渡效果 */
+        }
+
+        .transition-button:hover {
+            background-color: #008CBA; /* Blue */
+            width: 200px; /* 改变宽度 */
+        }
+
+    </style>
+</head>
+<body>
+    <button class="transition-button">Hover Over Me</button>
+</body>
+</html>

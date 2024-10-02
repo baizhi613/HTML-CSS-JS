@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .transform-box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 20px;
+            transition: transform 0.5s; /* 过渡效果 */
+        }
+
+        .transform-box:hover {
+            transform: rotate(180deg); /* 旋转180度 */
+        }
+
+        .scale-box {
+            width: 100px;
+            height: 100px;
+            background-color: #2ecc71;
+            margin: 20px;
+            transition: transform 0.5s;
+        }
+
+        .scale-box:hover {
+            transform: scale(1.5); /* 缩放1.5倍 */
+        }
+
+        .skew-box {
+            width: 100px;
+            height: 100px;
+            background-color: #f1c40f;
+            margin: 20px;
+            transition: transform 0.5s;
+        }
+
+        .skew-box:hover {
+            transform: skew(20deg, 10deg); /* 倾斜20度X轴和10度Y轴 */
+        }
+
+        .translate-box {
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            margin: 20px;
+            transition: transform 0.5s;
+        }
+
+        .translate-box:hover {
+            transform: translate(50px, 50px); /* 向右和向下移动50像素 */
+        }
+        .container {
+            perspective: 1000px; /* 视角距离，增强3D效果 */
+        }
+
+        .rotate-box, .translate-box, .scale-box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 20px;
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        .rotate-box:hover {
+            transform: rotateX(180deg); /* 绕X轴旋转 */
+        }
+
+        .rotate-box:nth-child(2):hover {
+            transform: rotateY(180deg); /* 绕Y轴旋转 */
+        }
+
+        .rotate-box:nth-child(3):hover {
+            transform: rotateZ(180deg); /* 绕Z轴旋转 */
+        }
+
+        .translate-box:hover {
+            transform: translateZ(100px); /* 沿Z轴移动 */
+        }
+
+        .scale-box:hover {
+            transform: scale3d(1.5, 1.5, 1.5); /* 在三个轴上缩放 */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="transform-box">Rotate</div>
+    <div class="scale-box">Scale</div>
+    <div class="skew-box">Skew</div>
+    <div class="translate-box">Translate</div>
+    <div class="container">
+        <div class="rotate-box">Rotate X</div>
+        <div class="rotate-box">Rotate Y</div>
+        <div class="rotate-box">Rotate Z</div>
+        <div class="translate-box">Translate Z</div>
+        <div class="scale-box">Scale</div>
+    </div>
+
+</body>
+</html>
