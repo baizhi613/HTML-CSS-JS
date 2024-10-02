@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="button" value="按钮"> -->
+    <input type="text" onkeyup="myOnkeyUp()">
+    <img src="D:\code\HTML+CSS+JS\school test\web\images\background-image.jpg" alt="图片加载失败" title="提示图片" width="100px" height="100px">
+</body>
+<script>
+    // let button=document.querySelector('input')
+    // button.onclick=function(){
+    //     alert("hello")
+    // }
+    let input=document.querySelector('input')
+    input.onkeydown=function(event){
+        // console.log('键盘按下');
+        // let a=event.keyCode;
+        // console.log(a);
+        // let b=String.fromCharCode(a);
+        // console.log(b);
+        if(event.shiftKey){
+            alert("shift被按下");
+        }
+        if(event.altKey){
+            alert("alt被按下");
+        }
+    }
+    function myOnkeyUp(){
+        console.log("按键抬起");
+    }
+
+    let img=document.querySelector('img');
+    console.dir(img)
+    img.title="修改后";
+    img.onclick=function(){
+        alert("hello")
+    }
+
+</script>
+</html>

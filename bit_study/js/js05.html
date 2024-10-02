@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="btn" type="button" value="播放" onclick="Onclick()">
+    <input class="all" type="checkbox" onclick="SelectAll()">选中全部<br>
+    <input class="select" type="checkbox">选项1<br>
+    <input class="select" type="checkbox">选项2<br>
+    <input class="select" type="checkbox">选项3<br>
+    <input class="select" type="checkbox">选项4<br>
+</body>
+<script>
+    let btn=document.querySelector('.btn')
+    function Onclick(){
+        if(btn.value=='播放'){
+            btn.value='暂停'
+        }else{
+            btn.value='播放'
+        }
+    }
+    let all=document.querySelector('.all')
+    let select=document.querySelector('.select')
+    console.dir(all)
+    function SelectAll(){
+        for(i=0;i<select.length;i++){
+            select[i].checked=all.checked
+        }
+    }
+    for(i=0;i<select.length;i++){
+        select[i].onclick=function(){
+            all.checked=IsSelectAll(select)
+        }
+    }
+    function IsSelectAll(select){
+        for(i=0;i<select.length;i++){
+            if(select[i].checked==false){
+                return false
+            }
+        }
+        return ture
+    }
+</script>
+</html>
