@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj={
+            name:'上海第二工业大学',
+            age:9,
+            address:'上海市浦东新区'
+        }
+
+        // let name=obj.name;
+        // let age=obj.age;
+        // let adress=obj.address;
+
+        let {name:name,age:age,address:address}={
+            name:'上海第二工业大学',
+            age:9,
+            address:'上海市浦东新区'
+        }
+        //let {name,age,address}=obj,简写版;
+        console.log(name,age,adress);
+    </script>
+</body>
+</html>

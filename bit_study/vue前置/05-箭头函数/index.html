@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(){}
+
+        const fn=function(){}
+
+        const result=fn()
+
+        const fn=()=>{}
+
+        const add=(x,y)=>{
+            return x+y;
+        }
+        const result1=add(1,1);
+        console.log(result1);
+
+        const log=arg=>{//参数只有一个可以省略小括号
+            console.log(log);
+        }
+        log(666);
+
+        const add1=(x,y)=>x+y;//函数体只有一个语句，此时自带return功能
+
+        const state=()=>({//返回对象时，为了简写，要给对象加一对小括号
+            token:'xxx',
+            userInfo:{
+                name:'admin',
+                id:1
+            }
+        })
+
+        setTime(function(){//可用于回调函数传参
+            console.log(666);
+        },2000)
+    </script>
+</body>
+</html>
